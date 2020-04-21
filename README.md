@@ -30,3 +30,8 @@ SET character_set_client=utf8mb4
 SET character_set_connection=utf8mb4
 
 // -- fallback: use Klingon instead. :) 
+
+# klingon-learner
+
+change to Klingon learner
+
