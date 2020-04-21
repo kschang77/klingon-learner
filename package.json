@@ -1,0 +1,26 @@
+{
+  "name": "klingon-learner",
+  "version": "1.0.0",
+  "description": "Use the burger app, but do it more like the vocab builder.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kschang77/klingon-learner.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kschang77/klingon-learner/issues"
+  },
+  "homepage": "https://github.com/kschang77/klingon-learner#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.3",
+    "mysql2": "^2.1.0"
+  }
+}
