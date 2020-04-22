@@ -1,0 +1,47 @@
+<h1>tlhIngan ghoj!</h1>
+<h3>Learn Klingon!</h3>
+
+<h2>tlhIngan mu'mey ghoj!</h2>
+<h4>Klingon words being learned!</h4>
+
+<ul>
+  {{#each klingons}}
+  {{#unless mastered}}
+  {{> klingons/klingon-block mastered=true}}
+  {{/unless}}
+  {{/each}}
+</ul>
+
+<h2>tlhIngan mu'mey bobaghlu'!</h2>
+<h4>Klingon words mastered!</h4>
+
+<ul>
+  {{#each klingons}}
+  {{#if mastered}}
+  {{> klingons/klingon-block mastered=false}}
+  {{/if}}
+  {{/each}}
+</ul>
+
+<h2>tlhIngan mu'mey chel</h2>
+<h4>Add a Klingon Word</h4>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="ca">Klingon Word:</label>
+    <input type="text" id="kw" name="kword">
+  </div>
+
+  <div class="form-group">
+    <label for="ca">English Translation:</label>
+    <input type="text" id="en" name="english">
+  </div>
+
+  <div class="form-group">
+    <label for="sleepy">Mastered?</label><br>
+    <input type="radio" name="mastered" value="1" checked> Hija'(yes)<br>
+    <input type="radio" name="mastered" value="0"> ghobe' (no)
+  </div>
+
+  <button type="submit">maj (Okay!)</button>
+</form>
