@@ -2,12 +2,26 @@
 var mysql = require("mysql");
 
 var connection = mysql.createConnection({
-  host: "localhost",
-  port: 3306,
-  user: "root",
-  password: "password",
-  database: "klingon_db"
+
+  user: "bdfb93be299cc3",
+  password: "ca214447",
+  host: "us-cdbr-iron-east-01.cleardb.net",
+  database: "heroku_a9783d6bd1fc647"
+
+  // host: "localhost",
+  // port: 3306,
+  // user: "root",
+  // password: "password",
+  // database: "klingon_db"
 });
+
+// changing to cloud mySQL...
+
+// user: "bdfb93be299cc3"
+// password: "ca214447"
+// host: "us-cdbr-iron-east-01.cleardb.net"
+// database: "heroku_a9783d6bd1fc647"
+
 
 // Make connection.
 connection.connect(function (err) {
