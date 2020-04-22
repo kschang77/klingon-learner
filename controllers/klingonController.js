@@ -10,7 +10,7 @@ router.get("/", function (req, res) {
     var hbsObject = {
       klingons: data
     };
-    console.log(hbsObject);
+    // console.log(hbsObject);
     res.render("index", hbsObject);
   });
 });
