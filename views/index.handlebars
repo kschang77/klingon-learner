@@ -1,12 +1,78 @@
-<div class="jumbotron jumbotron-fluid text-light bg-dark">
+<!-- header -->
+
+<div class="jumbotron jumbotron-fluid bg-dark mb-0">
   <div class="container">
     <img src="/assets/img/KLIbutton.gif" width=150 height=150 class="float-left" alt="Klingon Language Institute">
     <h1 class="display-4">tlhIngan ghoj!</h1>
-    <h3 class="lead">Learn Klingon!</h3>
+    <h2 class="display-6">Learn Klingon!</h2>
   </div>
 </div>
 
-<div class="container-fluid m-3 p-3">
+<!-- dividing bar and help -->
+
+<div class="container-fluid m-0 pt-0 pb-3 bg-dark text-center">
+  <button type="button" class="btn btn-lg btn-danger" data-toggle="modal" data-target="#exampleModalCenter">
+    What does this do?
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+      <div class="modal-content bg-dark">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">Welcome to Learn Klingon</h5>
+          <!--          <button type="button btn-warning" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button> -->
+        </div>
+        <div class="modal-body">
+          <P><i>nuqneH, taghwI’ qaStaH nuq?</i></P>
+
+          <P>That means "welcome, beginner! what's happening?" in Klingon.
+          </P>
+          <P>Learn Klingon is an initiative from the <a href="https://www.kli.org/">Klingon Language Institue</a> to
+            help
+            non-Klingons master the Klingon Language.
+          </P>
+          <P>The program is very simple.
+          </P>
+          <P>On the left, you have a series of Klingon words, under the heading "Klingon words being learned".
+          </P>
+          <P>Each word has a button. If you think you have mastered the Klingon word, click on the button to move it to
+            the right side, under the heading "Klingon words mastered"
+          </P>
+          <P>If you changed your mind, you can move it back with the matching button.
+          </P>
+          <P>If you are not sure what the button does, the icon should give you a clue, or you can hover the pointing
+            device over the button to receive a hint.
+          </P>
+          <P>You may only delete a Klingon word after you have mastered it.
+          </P>
+          <P>Should these Klingon words proven to be insufficient challange, or you have previously mastered some other
+            Klingon words, please add them to this program in order to track your progress of Klingon language mastery.
+          </P>
+
+          <P>You are welcome to add more Klingon words you wish to master to this program, either using KLI resources,
+            or using <a href="https://www.bing.com/translator">Microsoft Bing Translator</a>. Be warned that machine
+            translation
+            quality is low, and while you may get your meaning across, you will likely be laughed at, thus the need for
+            this program, so you may master the Klingon language the proper way.
+          </P>
+
+        </div>
+        <div class="modal-footer text-center">
+          <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- the actual left right interface -->
+
+<div class="container-fluid m-0 p-3 bg-dark">
   <div class="row">
     <div class="col-1"></div>
     <div class="col-5">
@@ -36,26 +102,37 @@
   </div>
 </div>
 
+<div class="container-fluid m-0 p-3 bg-dark">
+  <div class="row">
+    <div class="col-1"></div>
+    <div class="col-10">
 
-<h2>tlhIngan mu'mey chel</h2>
-<h4>Add a Klingon Word</h4>
-<form class="create-form">
 
-  <div class="form-group">
-    <label for="ca">Klingon Word:</label>
-    <input type="text" id="kw" name="kword">
+      <h2>tlhIngan mu'mey chel</h2>
+      <h4>Add a Klingon Word</h4>
+      <form class="create-form">
+
+        <div class="form-group">
+          <label for="ca">Klingon Word:</label>
+          <input type="text" id="kw" name="kword">
+        </div>
+
+        <div class="form-group">
+          <label for="ca">English Translation:</label>
+          <input type="text" id="en" name="english">
+        </div>
+
+        <div class="form-group">
+          <label for="sleepy">Mastered?</label><br>
+          <P><input type="radio" name="mastered" value="1"> Hija'(yes)</P>
+          <P><input type="radio" name="mastered" value="0" checked> ghobe' (no)</P>
+        </div>
+
+        <button type="submit" class=" btn-warning btn-lg" data-toggle="tooltip" data-placement="bottom"
+          title="Add it!">maj <i class="fas fa-check"></i></button>
+      </form>
+
+    </div>
+    <div class="col-1"></div>
   </div>
-
-  <div class="form-group">
-    <label for="ca">English Translation:</label>
-    <input type="text" id="en" name="english">
-  </div>
-
-  <div class="form-group">
-    <label for="sleepy">Mastered?</label><br>
-    <input type="radio" name="mastered" value="1" checked> Hija'(yes)<br>
-    <input type="radio" name="mastered" value="0"> ghobe' (no)
-  </div>
-
-  <button type="submit">maj (Okay!)</button>
-</form>
+</div>

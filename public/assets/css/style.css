@@ -1,11 +1,14 @@
-li {
-  padding: 5px;
-  margin: 5px;
-  background: #faebd7;
+
+h1, h2, h3, h4, h5, h6, p,label,input {
+  color: darkorange;
 }
 
 .label {
   font-weight: bold;
+}
+
+.border-3 {
+  border-width: 6px !important;
 }
 
 .create-update-form {

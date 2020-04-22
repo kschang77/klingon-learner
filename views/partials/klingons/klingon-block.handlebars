@@ -1,14 +1,17 @@
-<div class="container-fluid ml-0 mr-3 my-3 border border-secondary p-4 rounded">
+<div class="container-fluid ml-0 mr-3 my-3 border border-danger px-3 py-2 rounded-lg border-3">
 
   <h3>{{kword}}</h3>
 
   <P>{{english}}</P>
 
-  <P><button class="change-mastered" data-id="{{id}}" data-newmastered="{{mastered}}">
-      {{#if mastered}}HIja' (yes) {{else}}ghobe' (no) {{/if}}
-    </button></P>
-  {{#unless mastered}}
-  <P><button class="delete-klingon" data-id="{{this.id}}"> bIjathlh 'e' yImev! (Delete!)</button>
+  <P><button class="change-mastered btn-warning btn-lg" data-id="{{id}}" data-newmastered="{{mastered}}"
+      data-toggle="tooltip" data-placement="bottom" title="{{#if mastered}}learned it{{else}}study more{{/if}}">
+      {{#if mastered}}'oH ghoj <i class="fas fa-angle-double-right"></i>{{else}}<i class="fas fa-angle-double-left"></i>
+      latlh HaD{{/if}}
+    </button>
+    {{#unless mastered}}
+    <button class="delete-klingon btn-warning btn-lg" data-id="{{this.id}}" data-toggle="tooltip"
+      data-placement="bottom" title="delete!"> bIjathlh 'e' yImev! <i class="fas fa-trash-alt"></i></button>
+    {{/unless}}
   </P>
-  {{/unless}}
 </div>
