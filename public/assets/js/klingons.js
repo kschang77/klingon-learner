@@ -11,7 +11,7 @@ $(function () {
     // Send the PUT request.
     $.ajax("/api/klingons/" + id, {
       type: "PUT",
-      data: newKlingonState
+      data: newMasteredState
     }).then(
       function () {
         console.log("changed mastered to", newMastered);

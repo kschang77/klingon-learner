@@ -1,27 +1,41 @@
-<h1>tlhIngan ghoj!</h1>
-<h3>Learn Klingon!</h3>
+<div class="jumbotron jumbotron-fluid text-light bg-dark">
+  <div class="container">
+    <img src="/assets/img/KLIbutton.gif" width=150 height=150 class="float-left" alt="Klingon Language Institute">
+    <h1 class="display-4">tlhIngan ghoj!</h1>
+    <h3 class="lead">Learn Klingon!</h3>
+  </div>
+</div>
 
-<h2>tlhIngan mu'mey ghoj!</h2>
-<h4>Klingon words being learned!</h4>
+<div class="container-fluid m-3 p-3">
+  <div class="row">
+    <div class="col-1"></div>
+    <div class="col-5">
+      <h2>tlhIngan mu'mey ghoj!</h2>
+      <h4>Klingon words being learned!</h4>
 
-<ul>
-  {{#each klingons}}
-  {{#unless mastered}}
-  {{> klingons/klingon-block mastered=true}}
-  {{/unless}}
-  {{/each}}
-</ul>
+      {{#each klingons}}
+      {{#unless mastered}}
+      {{> klingons/klingon-block mastered=true}}
+      {{/unless}}
+      {{/each}}
 
-<h2>tlhIngan mu'mey bobaghlu'!</h2>
-<h4>Klingon words mastered!</h4>
+    </div>
+    <div class="col-5">
+      <h2>tlhIngan mu'mey bobaghlu'!</h2>
+      <h4>Klingon words mastered!</h4>
 
-<ul>
-  {{#each klingons}}
-  {{#if mastered}}
-  {{> klingons/klingon-block mastered=false}}
-  {{/if}}
-  {{/each}}
-</ul>
+      {{#each klingons}}
+      {{#if mastered}}
+      {{> klingons/klingon-block mastered=false}}
+      {{/if}}
+      {{/each}}
+
+    </div>
+    <div class="col-1"></div>
+
+  </div>
+</div>
+
 
 <h2>tlhIngan mu'mey chel</h2>
 <h4>Add a Klingon Word</h4>

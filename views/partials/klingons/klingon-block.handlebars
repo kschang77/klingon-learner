@@ -1,9 +1,14 @@
-<li>
-  {{kword}} // {{english}}
+<div class="container-fluid ml-0 mr-3 my-3 border border-secondary p-4 rounded">
 
-  <button class="change-mastered" data-id="{{id}}" data-newmastered="{{mastered}}">
-    {{#if mastered}}HIja' (yes) {{else}}ghobe' (no) {{/if}}
-  </button>
+  <h3>{{kword}}</h3>
 
-  <button class="delete-klingon" data-id="{{this.id}}"> bIjathlh 'e' yImev! (Delete!)</button>
-</li>
+  <P>{{english}}</P>
+
+  <P><button class="change-mastered" data-id="{{id}}" data-newmastered="{{mastered}}">
+      {{#if mastered}}HIja' (yes) {{else}}ghobe' (no) {{/if}}
+    </button></P>
+  {{#unless mastered}}
+  <P><button class="delete-klingon" data-id="{{this.id}}"> bIjathlh 'e' yImev! (Delete!)</button>
+  </P>
+  {{/unless}}
+</div>
