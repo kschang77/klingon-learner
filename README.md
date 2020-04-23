@@ -26,17 +26,13 @@ https://kc-klingon-learner.herokuapp.com/
 
 ![demo gif](demo.gif)
 
-## Install
-
-```sh
-npm install
-```
-
 ## To Start
 
 ```sh
 npm server.js
 ```
+
+or open the demo app URL above
 
 ## How to Use
 
@@ -128,6 +124,7 @@ As the pages generated in Express and Handlebars call upon the various ORM metho
 * Screencastify for recording the demo
 * ezgif.com for optimizing the demo.gif (from 11.8 MB to 7.2 MB)
 * heroku.com for demo app hosting and MySQL plugin
+* github for hosting the repo
 
 ## Author
 
