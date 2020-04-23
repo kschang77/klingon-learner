@@ -22,7 +22,7 @@
 
 ### Demo
 
-To be determined!
+https://kc-klingon-learner.herokuapp.com/
 
 ## Install
 
