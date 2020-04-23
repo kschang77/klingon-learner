@@ -1,7 +1,7 @@
 // Set up MySQL connection.
 var mysql = require("mysql");
 
-var connection = mysql.createConnection({
+var connection = mysql.createPool({
 
   user: "bdfb93be299cc3",
   password: "ca214447",
