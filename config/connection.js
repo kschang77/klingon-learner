@@ -1,7 +1,7 @@
 // Set up MySQL connection.
 var mysql = require("mysql");
 
-var connection = mysql.createPool({
+var mysqlPool = mysql.createPool({
 
   user: "bdfb93be299cc3",
   password: "ca214447",
@@ -24,7 +24,7 @@ var connection = mysql.createPool({
 
 
 // Make connection.
-connection.connect(function (err) {
+mysqlPool.getConnection(function (err, connection) {
   if (err) {
     console.error("error connecting: " + err.stack);
     return;
