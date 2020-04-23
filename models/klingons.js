@@ -19,7 +19,7 @@ var klingon = {
     });
   },
   delete: function (condition, cb) {
-    orm.delete("klingonss", condition, function (res) {
+    orm.delete("klingons", condition, function (res) {
       cb(res);
     });
   }
