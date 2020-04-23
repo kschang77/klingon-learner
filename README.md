@@ -125,6 +125,7 @@ As the pages generated in Express and Handlebars call upon the various ORM metho
 * ezgif.com for optimizing the demo.gif (from 11.8 MB to 7.2 MB)
 * heroku.com for demo app hosting and MySQL plugin
 * github for hosting the repo
+* and Klingon Language Institute (KLI.org) for logo and Klingon phrases. 
 
 ## Author
 
