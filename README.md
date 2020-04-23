@@ -24,6 +24,8 @@
 
 https://kc-klingon-learner.herokuapp.com/
 
+![demo gif](demo.gif)
+
 ## Install
 
 ```sh
@@ -85,15 +87,12 @@ This is a rather complicated program due to the requirement of using Terran prim
 There is only one MySQL table
 
 ```
-CREATE DATABASE klingon_db;
-USE klingon_db;
-
 CREATE TABLE klingons
 (
 	id int NOT NULL AUTO_INCREMENT,
 	kword varchar(255) NOT NULL,
 	english varchar(255) NOT NULL,
-  mastered BOOLEAN DEFAULT false,
+        mastered BOOLEAN DEFAULT false,
 	PRIMARY KEY (id)
 );
 ```
@@ -122,6 +121,13 @@ The program uses ORM (object relational mapping) paradigm to create an object-or
 
 As the pages generated in Express and Handlebars call upon the various ORM methods, database is being read and updated, and results used to generate and update the webpages being displayed. 
 
+## Tools Used
+
+* Microsoft Visual Studio Code
+* Git-bash
+* Screencastify for recording the demo
+* ezgif.com for optimizing the demo.gif (from 11.8 MB to 7.2 MB)
+* heroku.com for demo app hosting and MySQL plugin
 
 ## Author
 
