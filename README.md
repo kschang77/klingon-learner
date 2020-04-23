@@ -24,6 +24,9 @@
 
 https://kc-klingon-learner.herokuapp.com/
 
+
+Warning: This is a 7MB animated GIF
+
 ![demo gif](demo.gif)
 
 ## To Start
@@ -95,27 +98,65 @@ CREATE TABLE klingons
 
 A _seeds.sql_ is provided to pre-populate the table with six of the most used Klingon words and their English translations. 
 
-There are three main layers to this program. 
+### Program Flow
+
+There are three main layers to this program. L0 is technically a part of L1 but may be easier mentally to consider them separate. 
+
+```
+L0: UI  <-->  L1: Express.js  <---> L2: ORM <---> L3:DATA/SQL   
+```
+
+The reason for multiple layer of abstraction like this is flexibility. Different people can be working on different parts of the app at the same time, without affecting each other, once the basic logic and interface has been agreed upon. A team can be fleshing out the basic template with Bootstrap or other CSS framework, while another team can be working on the backend (layer 2 to 3) to migrate the data and app to a cloud-based database engine rather than dependent on local data server. 
+
+
+### Layer 0: browser-level Javascript and UI elements
+
+There are some browser-level JavaScript that works with layer one webpages to form the UI. It uses jQuery to attach action code to the buttons. This, when combined with the standard HTML forms and the basic HTTP get, post, put, delete methods, forms level 0. Though they could be thought as a part of layer 1.
+
 
 ### Layer 1: Express
 
-Node.js and Express.js are used to create a web server that listens for web calls and calls upon the templates specified in the next layer, Handlebars to serve up the right ones, and to call upon Layer 3 for database contents such as the word list. 
+Node.js and Express.js are used to create a web server that listens for api "routes" denoting specific actions. It also serve up some initial pages to work with layer 0 JavaScript to render the initial UI. This has been abstracted into layer 1.5 Handlebars, but it could all be considered a single layer depending on how deep one wishes to consider this model. 
+
+Once the api routes are reached, the matching object interface of object relational mapping (ORM) is called. One can consider this "routing" (as it's often used with express.router() method) from UI to first action as interface between level 1 and level 2. This uses HTML methods, like GET, PUT, DELETE and so on. 
+
+For example, add button is pushed (layer 0), webpage submits to itself (layer 1) with a POST, which is translated to a create call for level 2, along with a callback function(). 
+
+Once the callback function returned, the result(s) can be rendered, and screen updated. 
 
 
-### Layer 2: Handlebars
+### Layer 1.5: Handlebars
 
-Handlebars is a template engine that is used to generate webpages or webpage blocks that can be easily reused without recoding by hand. In this case, it is used to separate the header, the footer, and the repeating blocks, so each can be modified separately, and in fact, while the server is running, and results can be seen immediately. 
+Handlebars is a web template engine that works well with express.js. Instead of working with raw HTML pages and generate everything by Javascript, a series of templates such as index.handlebars is created, and data fields are "merged" into these templates and served. 
 
-### Layer 3: Object Relational Mapping (ORM)
+There can be a series of templates depending on the complexity of the setup. For this single-page app, there are three templates: 
+
+* main.handlebars -- the page header and footer, without the body. This is where you render the repeating header and footer of the page, as well as any script includes, such as jQuery, Bootstrap, and other includes, such as layer 0 stuff. 
+
+* index.handlebars -- the main "body" that fits in the middle of "main". In this case, it contains the layout grid of Bootstrap 4, that would contain some repeating elements. 
+
+* <repeating>.handlebars -- whatever the name, this is the repeating element within the page. For this app, it's the individual "word block" with the button(s). Remember to make sure the layer 0 Javascript matches up here. 
+
+One advantage of handlebars is you can modify the different blocks without restarting the server. Simply reload the page and you will see the modifications. 
+
+
+### Layer 2: Object Relational Mapping (ORM)
 
 The program uses ORM (object relational mapping) paradigm to create an object-oriented wrapper _orm.js_ around the mySQL query functions, specifically:
 
-* all
+* get/read
 * create
 * update
 * delete
 
-As the pages generated in Express and Handlebars call upon the various ORM methods, database is being read and updated, and results used to generate and update the webpages being displayed. 
+You can think of ORM as the manager of relationship between layer 2 and layer 3, the SQL server. The "router" in level 1 translated the api action into a level 2 action. Now, the ORM.js file will convert the level 2 action into a level 3 qaction. A callback function will ensure the data wil lbe returned, and passed back up to level 1. 
+
+### Layer 3: The Actual Data Engine
+
+At layer 3 the actual SQL statemetns are being executed. This is where the connection to MySQL (or any other SQL engine) is made, then queries run, and results returned. 
+
+Depending on the command given, results or result codes will be passed up through the use of callback functions back to level 2 and probably back through level one through another level of callback function. 
+
 
 ## Tools Used
 
@@ -126,6 +167,14 @@ As the pages generated in Express and Handlebars call upon the various ORM metho
 * heroku.com for demo app hosting and MySQL plugin
 * github for hosting the repo
 * and Klingon Language Institute (KLI.org) for logo and Klingon phrases. 
+
+## Future Enhancements? 
+
+* A "flash card" capability like "Anki"
+* A quiz
+* have the wording verified by KLI.org
+* Add pronouciations through a blob field for recording, and a audio player
+* ????
 
 ## Author
 
