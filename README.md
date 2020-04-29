@@ -32,7 +32,7 @@ Warning: This is a 7MB animated GIF
 ## To Start
 
 ```sh
-npm server.js
+node server.js
 ```
 
 or open the demo app URL above
